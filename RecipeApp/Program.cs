@@ -9,7 +9,7 @@ namespace RecipeApp
     class Ingredient
     {
         public string Name { get; set; }
-        public double Quantity { get; set; }
+        public double Amount { get; set; }
         public string Unit { get; set; }
     }
 
@@ -28,9 +28,9 @@ namespace RecipeApp
         private double _scalingFactor = 1.0;
 
         //adding ingredients to the ingredients array
-        public void AddIngredient(string name, double quantity, string unit)
+        public void AddIngredient(string name, double amount, string unit)
         {
-            _ingredients.Add(new Ingredient { Name = name, Quantity = quantity, Unit = unit });
+            _ingredients.Add(new Ingredient { Name = name, Amount = amount, Unit = unit });
         }
 
         //adding ingredients to the steps array
@@ -50,7 +50,7 @@ namespace RecipeApp
             Console.WriteLine("Ingredients:");
             foreach (var ingredient in _ingredients)
             {
-                Console.WriteLine($"{ingredient.Quantity * _scalingFactor} {ingredient.Unit} {ingredient.Name}");
+                Console.WriteLine($"{ingredient.Amount * _scalingFactor} {ingredient.Unit} {ingredient.Name}");
             }
 
             Console.WriteLine("\nSteps:");
@@ -88,14 +88,41 @@ namespace RecipeApp
 
 
         static void Main(string[] args)
-        { 
-        
+        {
 
+            //recipe class object
+            Recipe recipe = new Recipe();
+
+            // Getting the number of ingredients from the user
+            Console.Write("Please enter the number of ingredients in your recipe: ");
+            int numIngredients = int.Parse(Console.ReadLine());
+
+            // Getting the ingredient details from the user
+            for (int i = 1; i <= numIngredients; i++)
+            {
+                Console.Write($"Please enter the name of ingredient {i}: ");
+                string name = Console.ReadLine();
+
+                Console.Write($"Please enter the amount of ingredient {i} you want: ");
+                double amount = double.Parse(Console.ReadLine());
+
+                Console.Write($"Please enter the unit of measurement for ingredient {i}: ");
+                string unit = Console.ReadLine();
+
+                recipe.AddIngredient(name, amount, unit);
+            }
+
+            // Displaying the recipe
+            recipe.DisplayRecipe();
+
+            
 
         }
 
 
-        }
+
+
+    }
 
 
 
