@@ -72,7 +72,13 @@ namespace RecipeApp
             _scalingFactor = 1.0;
         }
 
-
+        //clearing incase the user wants to enter another recipe
+        public void ClearRecipe()
+        {
+            _ingredients.Clear();
+            _steps.Clear();
+            _scalingFactor = 1.0;
+        }
 
     }
 
