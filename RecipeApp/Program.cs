@@ -20,7 +20,7 @@ namespace RecipeApp
     }
 
     //the recipe class will collect the data and store it in the array list?? lists??
-    class Rescipe 
+    class Recipe 
     {
         //the two lists and the scaling factor for when the user wants to scale up their recipe
         private List<Ingredient> _ingredients = new List<Ingredient>();
