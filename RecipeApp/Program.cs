@@ -115,6 +115,11 @@ namespace RecipeApp
             // Displaying the recipe
             recipe.DisplayRecipe();
 
+            // Scaling the recipe
+            Console.Write("\nPlease enter the scaling factor (0.5, 2, or 3) to adjust your recipe: ");
+            double factor = double.Parse(Console.ReadLine());
+            recipe.ScaleRecipe(factor);
+
             
 
         }
