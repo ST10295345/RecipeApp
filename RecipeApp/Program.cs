@@ -127,7 +127,8 @@ namespace RecipeApp
             recipe.ResetScalingFactor();
             recipe.DisplayRecipe();
 
-            
+            // Clear the recipe
+            recipe.ClearRecipe();
 
         }
 
