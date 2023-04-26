@@ -123,6 +123,10 @@ namespace RecipeApp
             // Displaying the scaled recipe
             recipe.DisplayRecipe();
 
+            // Resetting scaling factor for the user to enter another one
+            recipe.ResetScalingFactor();
+            recipe.DisplayRecipe();
+
             
 
         }
