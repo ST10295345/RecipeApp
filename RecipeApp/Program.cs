@@ -34,7 +34,32 @@ namespace RecipeApp
         }
 
         //adding ingredients to the steps array
+        public void AddStep(int number, string description)
+        {
+            _steps.Add(new Step { Number = number, Description = description });
+        }
 
+        //the display of the recipe
+        public void DisplayRecipe()
+        {
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\n*** Recipe ***\n");
+            Console.ResetColor();
+
+            Console.WriteLine("Ingredients:");
+            foreach (var ingredient in _ingredients)
+            {
+                Console.WriteLine($"{ingredient.Quantity * _scalingFactor} {ingredient.Unit} {ingredient.Name}");
+            }
+
+            Console.WriteLine("\nSteps:");
+            foreach (var step in _steps)
+            {
+                Console.WriteLine($"{step.Number}. {step.Description}");
+            }
+
+        }
 
     }
 
