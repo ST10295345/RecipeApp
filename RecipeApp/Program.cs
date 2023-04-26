@@ -120,6 +120,9 @@ namespace RecipeApp
             double factor = double.Parse(Console.ReadLine());
             recipe.ScaleRecipe(factor);
 
+            // Displaying the scaled recipe
+            recipe.DisplayRecipe();
+
             
 
         }
