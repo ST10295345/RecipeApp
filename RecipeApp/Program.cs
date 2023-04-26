@@ -86,29 +86,16 @@ namespace RecipeApp
     class Program
     {
 
-        //recipe class object
-        Recipe recipe = new Recipe();
 
-        // Get number of ingredients
-        Console.Write("Enter the number of ingredients in your recipe: ");
-            int numIngredients = int.Parse(Console.ReadLine());
+        static void Main(string[] args)
+        { 
+        
 
-            // Get ingredient details
-            for (int i = 1; i <= numIngredients; i++)
-            {
-                Console.Write($"Enter the name of ingredient {i}: ");
-                string name = Console.ReadLine();
 
-        Console.Write($"Enter the quantity of ingredient {i}: ");
-                double quantity = double.Parse(Console.ReadLine());
+        }
 
-        Console.Write($"Enter the unit of measurement for ingredient {i}: ");
-                string unit = Console.ReadLine();
 
-        recipe.AddIngredient(name, quantity, unit);
-            }
-
-}
+        }
 
 
 
