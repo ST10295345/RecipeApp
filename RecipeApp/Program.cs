@@ -85,8 +85,9 @@ namespace RecipeApp
 
     class Program 
     {
-    
 
+        //recipe class object
+        Recipe recipe = new Recipe();
 
     }
 
