@@ -37,6 +37,40 @@ namespace RecipeApp
             recipeData.Add(step);
         }
 
+        public void DisplayRecipe()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\n*** Recipe ***\n");
+            Console.ResetColor();
+
+            Console.WriteLine($"Recipe Name: {Name}");
+
+            Console.WriteLine("\nIngredients:");
+            int ingredientCount = 1;
+            foreach (var item in recipeData)
+            {
+                if (item.StartsWith("Ingredient"))
+                {
+                    Console.WriteLine($"  {ingredientCount}. {item}");
+                    ingredientCount++;
+                }
+            }
+
+            Console.WriteLine("\nSteps:");
+            int stepCount = 1;
+            foreach (var item in recipeData)
+            {
+                if (item.StartsWith("Step"))
+                {
+                    Console.WriteLine($"  {stepCount}. {item}");
+                    stepCount++;
+                }
+            }
+        }
+
+
+        //
+
 
         class Program
     {
