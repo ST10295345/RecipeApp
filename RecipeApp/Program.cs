@@ -5,11 +5,12 @@ using System.Collections.Generic;
 namespace RecipeApp
 {
 
-    //the recipe class will collect the data and store it in the array list?? lists??
+    //the recipe class will collect the data and store it in the list??
     class Recipe
     {
         public List<string> recipeData = new List<string>();
         private double scalingFactor = 1.0;
+        public int Calories { get; private set; }
 
         public string Name { get; set; }
 
@@ -21,6 +22,11 @@ namespace RecipeApp
         public void AddStep(string step)
         {
             recipeData.Add(step);
+        }
+
+        public void SetCalories(int calories)
+        {
+            Calories = calories;
         }
 
         public void DisplayRecipe()
