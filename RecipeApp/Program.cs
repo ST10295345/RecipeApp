@@ -22,10 +22,20 @@ namespace RecipeApp
     //the recipe class will collect the data and store it in the array list?? lists??
     class Recipe
     {
-        private List<string> _recipeData = new List<string>();
-        private double _scalingFactor = 1.0;
+        private List<string> recipeData = new List<string>();
+        private double scalingFactor = 1.0;
 
         public string Name { get; set; }
+
+        public void AddIngredient(string ingredient)
+        {
+            recipeData.Add(ingredient);
+        }
+
+        public void AddStep(string step)
+        {
+            recipeData.Add(step);
+        }
 
 
         class Program
