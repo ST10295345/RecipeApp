@@ -235,13 +235,19 @@ namespace RecipeApp
             {
                 Recipe recipe = recipes[recipeName];
                 recipe.DisplayRecipe();
-                Console.WriteLine($"Calories: {Calories}");
+                Console.WriteLine($"Calories: {recipe.Calories}");
+
+                if (recipe.Calories > 300)
+                {
+                    Console.WriteLine("This recipe has more than 300 calories.");
+                }
             }
             else
             {
                 Console.WriteLine($"Recipe '{recipeName}' not found.");
             }
         }
+
 
     }
 
