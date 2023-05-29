@@ -177,6 +177,23 @@ namespace RecipeApp
         }
 
 
+        static void DeleteRecipe(Dictionary<string, Recipe> recipes)
+        {
+            Console.Write("Enter the name of the recipe you want to delete: ");
+            string recipeName = Console.ReadLine();
+
+            if (recipes.ContainsKey(recipeName))
+            {
+                recipes.Remove(recipeName);
+                Console.WriteLine($"Recipe '{recipeName}' has been deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"Recipe '{recipeName}' not found.");
+            }
+        }
+
+
     }
 
 
