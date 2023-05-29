@@ -235,6 +235,7 @@ namespace RecipeApp
             {
                 Recipe recipe = recipes[recipeName];
                 recipe.DisplayRecipe();
+                Console.WriteLine($"Calories: {Calories}");
             }
             else
             {
