@@ -8,7 +8,7 @@ namespace RecipeApp
     //the recipe class will collect the data and store it in the array list?? lists??
     class Recipe
     {
-        private List<string> recipeData = new List<string>();
+        public List<string> recipeData = new List<string>();
         private double scalingFactor = 1.0;
 
         public string Name { get; set; }
@@ -207,6 +207,23 @@ namespace RecipeApp
                 Recipe recipe = recipes[recipeName];
                 recipe.ScaleRecipe(factor);
                 Console.WriteLine($"Recipe '{recipeName}' has been scaled by a factor of {factor}.");
+            }
+            else
+            {
+                Console.WriteLine($"Recipe '{recipeName}' not found.");
+            }
+        }
+
+
+        static void DisplayRecipe(Dictionary<string, Recipe> recipes)
+        {
+            Console.Write("Enter the name of the recipe you want to display: ");
+            string recipeName = Console.ReadLine();
+
+            if (recipes.ContainsKey(recipeName))
+            {
+                Recipe recipe = recipes[recipeName];
+                recipe.DisplayRecipe();
             }
             else
             {
