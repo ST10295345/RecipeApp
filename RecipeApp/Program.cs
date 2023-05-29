@@ -32,33 +32,37 @@ namespace RecipeApp
         public void DisplayRecipe()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\n*** Recipe ***\n");
+            Console.WriteLine("\n***** The Recipe App *****\n");
             Console.ResetColor();
 
-            Console.WriteLine($"Recipe Name: {Name}");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"           \"{Name}\"");
+            Console.ResetColor();
+            Console.WriteLine("____________________________\n");
 
-            Console.WriteLine("\nIngredients:");
-            int ingredientCount = 1;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("           **Ingredients**");
+            Console.ResetColor();
             foreach (var item in recipeData)
             {
                 if (item.StartsWith("Ingredient"))
                 {
-                    Console.WriteLine($"  {ingredientCount}. {item}");
-                    ingredientCount++;
+                    Console.WriteLine($"\"{item}\"");
                 }
             }
 
-            Console.WriteLine("\nSteps:");
-            int stepCount = 1;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("           **Steps**");
+            Console.ResetColor();
             foreach (var item in recipeData)
             {
                 if (item.StartsWith("Step"))
                 {
-                    Console.WriteLine($"  {stepCount}. {item}");
-                    stepCount++;
+                    Console.WriteLine($"\"{item}\"");
                 }
             }
         }
+
 
         public void ScaleRecipe(double factor)
         {
@@ -92,7 +96,7 @@ namespace RecipeApp
 
             while (true)
             {
-
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("===== Recipe App =====");
                 Console.WriteLine("1. Add Recipe");
                 Console.WriteLine("2. Delete Recipe");
@@ -101,6 +105,7 @@ namespace RecipeApp
                 Console.WriteLine("5. Exit");
 
                 Console.Write("\nEnter your choice (1-5): ");
+                Console.ResetColor();
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -235,6 +240,7 @@ namespace RecipeApp
             {
                 Recipe recipe = recipes[recipeName];
                 recipe.DisplayRecipe();
+
                 Console.WriteLine($"Calories: {recipe.Calories}");
 
                 if (recipe.Calories > 300)
@@ -247,6 +253,7 @@ namespace RecipeApp
                 Console.WriteLine($"Recipe '{recipeName}' not found.");
             }
         }
+
 
 
     }
