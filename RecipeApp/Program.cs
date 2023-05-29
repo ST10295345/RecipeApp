@@ -20,10 +20,15 @@ namespace RecipeApp
     }
 
     //the recipe class will collect the data and store it in the array list?? lists??
-    
+    class Recipe
+    {
+        private List<string> _recipeData = new List<string>();
+        private double _scalingFactor = 1.0;
+
+        public string Name { get; set; }
 
 
-    class Program
+        class Program
     {
 
 
