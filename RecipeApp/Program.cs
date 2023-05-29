@@ -68,6 +68,15 @@ namespace RecipeApp
             }
         }
 
+        public void ScaleRecipe(double factor)
+        {
+            scalingFactor = factor;
+        }
+
+        public void ResetScalingFactor()
+        {
+            scalingFactor = 1.0;
+        }
 
         //
 
