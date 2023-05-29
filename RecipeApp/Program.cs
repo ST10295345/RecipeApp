@@ -79,10 +79,14 @@ namespace RecipeApp
 
 
         static void Main(string[] args)
-        { 
-        
+        {
 
-        
+            Dictionary<string, Recipe> recipes = new Dictionary<string, Recipe>();
+
+
+
+
+
         }
 
 
