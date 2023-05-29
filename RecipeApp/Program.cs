@@ -178,6 +178,11 @@ namespace RecipeApp
                 }
             }
 
+            Console.Write("Enter the number of calories in the recipe: ");
+            int calories = int.Parse(Console.ReadLine());
+
+            recipe.SetCalories(calories);
+
             recipes.Add(recipeName, recipe);
             Console.WriteLine($"Recipe '{recipeName}' has been added successfully.");
         }
