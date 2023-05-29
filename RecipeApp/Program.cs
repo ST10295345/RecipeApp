@@ -78,10 +78,17 @@ namespace RecipeApp
             scalingFactor = 1.0;
         }
 
-        //
+        public void ClearRecipe()
+        {
+            recipeData.Clear();
+            scalingFactor = 1.0;
+        }
+    }
+
+    //
 
 
-        class Program
+    class Program
     {
 
 
