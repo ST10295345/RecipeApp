@@ -150,7 +150,34 @@ namespace RecipeApp
             }
 
 
+            while (true)
+            {
+                Console.Write("Would you like to enter a step? (y/n): ");
+                string choice = Console.ReadLine().ToLower();
+
+                if (choice == "y")
+                {
+                    Console.Write($"Enter step {recipe.recipeData.Count - numIngredients + 1}: ");
+                    string stepDescription = Console.ReadLine();
+
+                    recipe.AddStep($"Step {recipe.recipeData.Count - numIngredients + 1}: {stepDescription}");
+                }
+                else if (choice == "n")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice. Please try again.");
+                }
+            }
+
+            recipes.Add(recipeName, recipe);
+            Console.WriteLine($"Recipe '{recipeName}' has been added successfully.");
         }
+
+
+    }
 
 
 
