@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace RecipeApp
 {
@@ -8,27 +9,35 @@ namespace RecipeApp
     //the recipe class will collect the data and store it in the list??
     class Recipe
     {
+
+        //public variables. necessary variables the list, scaling factor and the calories
         public List<string> recipeData = new List<string>();
         private double scalingFactor = 1.0;
         public int Calories { get; private set; }
 
+        // public set methods so that I can use these varuables in all the classes that need them
+        //set method for the name
         public string Name { get; set; }
 
+        //set method for the ingredients
         public void AddIngredient(string ingredient)
         {
             recipeData.Add(ingredient);
         }
 
+        //set method for the steps
         public void AddStep(string step)
         {
             recipeData.Add(step);
         }
 
+        // set method for the calories
         public void SetCalories(int calories)
         {
             Calories = calories;
         }
 
+        //the display method, also where I can put the visual colours that are required this is basically the skeleton of the final display
         public void DisplayRecipe()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -43,6 +52,7 @@ namespace RecipeApp
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("           **Ingredients**");
             Console.ResetColor();
+
             foreach (var item in recipeData)
             {
                 if (item.StartsWith("Ingredient"))
@@ -63,7 +73,7 @@ namespace RecipeApp
             }
         }
 
-
+        //scalinig factor
         public void ScaleRecipe(double factor)
         {
             scalingFactor = factor;
@@ -74,6 +84,7 @@ namespace RecipeApp
             scalingFactor = 1.0;
         }
 
+        //.clear for reseting the display
         public void ClearRecipe()
         {
             recipeData.Clear();
@@ -81,13 +92,13 @@ namespace RecipeApp
         }
     }
 
-    //
+    // main class where all the major visuals are
 
 
     class Program
     {
 
-
+        //main method where I'll ask what the user wants to do
         static void Main(string[] args)
         {
 
@@ -135,6 +146,7 @@ namespace RecipeApp
         }
 
 
+        //this method collects the data from the dictionary to store it
         static void AddRecipe(Dictionary<string, Recipe> recipes)
         {
             Console.Write("Enter the name of the recipe: ");
@@ -192,7 +204,7 @@ namespace RecipeApp
             Console.WriteLine($"Recipe '{recipeName}' has been added successfully.");
         }
 
-
+        //this is the delete method for the dictionary by recipe name
         static void DeleteRecipe(Dictionary<string, Recipe> recipes)
         {
             Console.Write("Enter the name of the recipe you want to delete: ");
@@ -209,7 +221,7 @@ namespace RecipeApp
             }
         }
 
-
+        //this is where the user will be asked to scale their recipe
         static void ScaleRecipe(Dictionary<string, Recipe> recipes)
         {
             Console.Write("Enter the name of the recipe you want to scale: ");
@@ -230,7 +242,7 @@ namespace RecipeApp
             }
         }
 
-
+        //the final display method that structures everything together
         static void DisplayRecipe(Dictionary<string, Recipe> recipes)
         {
             Console.Write("Enter the name of the recipe you want to display: ");
