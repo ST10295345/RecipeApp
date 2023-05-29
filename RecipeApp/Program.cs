@@ -87,8 +87,43 @@ namespace RecipeApp
             while (true)
             {
 
+                Console.WriteLine("===== Recipe App =====");
+                Console.WriteLine("1. Add Recipe");
+                Console.WriteLine("2. Delete Recipe");
+                Console.WriteLine("3. Scale Recipe");
+                Console.WriteLine("4. Display Recipe");
+                Console.WriteLine("5. Exit");
 
+                Console.Write("\nEnter your choice (1-5): ");
+                int choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        AddRecipe(recipes);
+                        break;
+                    case 2:
+                        DeleteRecipe(recipes);
+                        break;
+                    case 3:
+                        ScaleRecipe(recipes);
+                        break;
+                    case 4:
+                        DisplayRecipe(recipes);
+                        break;
+                    case 5:
+                        Console.WriteLine("Exiting the application...");
+                        return;
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+
+                Console.WriteLine();
             }
+        }
+
+    }
 
 
 
